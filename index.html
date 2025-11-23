@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Studios Wiki - Хроники Теней</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>Shadow Studios</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Главная</a></li>
+                    <li><a href="characters.html" class="nav-link">Персонажи</a></li>
+                    <li><a href="gallery.html" class="nav-link">Галерея</a></li>
+                    <li><a href="#information" class="nav-link">Информация</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="wiki-logo">
+                    <h2 class="shadow-text">Shadow Studios Wiki</h2>
+                </div>
+                <p class="hero-description">
+                    — энциклопедия по вселенной «Хроники Теней». Здесь вы найдёте разбор персонажей, теорий и скрытых символов.
+                </p>
+                <button class="explore-btn" onclick="scrollToContent()">Исследовать вселенную</button>
+            </div>
+            <div class="shadow-waves"></div>
+        </section>
+
+        <section id="books" class="books-section">
+            <h2 class="section-title">Книги</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <h3 class="book-title">Первая глава</h3>
+                    <div class="file-container">
+                        <a href="/files/chapter1.pdf" class="download-btn" download>
+                             Скачать PDF
+                        </a>
+                    </div>
+                    <p class="book-description">
+                        Начало эпического путешествия в мир «Хроник Теней». Знакомство с главными героями и основным конфликтом.
+                    </p>
+                </div>
+                
+                <div class="book-card">
+                    <h3 class="book-title">Вторая глава</h3>
+                    <div class="file-container">
+                        <a href="/files/chapter2.pdf" class="download-btn" download>
+                             Скачать PDF
+                        </a>
+                    </div>
+                    <p class="book-description">
+                        Развитие сюжета, новые персонажи и раскрытие тайн вселенной. Погружение в глубины магии и технологии.
+                    </p>
+                </div>
+                
+                <div class="book-card">
+                    <h3 class="book-title">Третья глава</h3>
+                    <div class="file-container">
+                        <a href="/files/chapter3.pdf" class="download-btn" download>
+                             Скачать PDF
+                        </a>
+                    </div>
+                    <p class="book-description">
+                        Кульминационные события, битвы и откровения. Судьбоносные решения главных героев.
+                    </p>
+                </div>
+                
+                <!-- Место для дополнительных карточек -->
+                <div class="book-card placeholder-card">
+                    <h3 class="book-title">Скоро...</h3>
+                    <div class="file-container">
+                        <div class="placeholder-file">📄</div>
+                    </div>
+                    <p class="book-description">
+                        Новая глава в разработке. Следите за обновлениями!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="information" class="info-section">
+            <h2 class="section-title">Информация</h2>
+            
+            <div class="author-info">
+                <div class="author-header">
+                    <div class="avatar-container">
+                        <div class="avatar">GR</div>
+                    </div>
+                    <div class="author-details">
+                        <h3>Гурин Роман</h3>
+                        <p class="author-subtitle">Создатель вселенной «Хроники Теней»</p>
+                    </div>
+                </div>
+                <div class="author-bio">
+                    <p>Писатель и сценарист. С детства увлекался мистикой и фантастикой, что впоследствии вылилось в создание масштабной вселенной «Хроники Теней». Его произведения отличаются глубокой проработкой мира и сложными персонажами.</p>
+                    <p>Основные темы творчества: двойственность человеческой природы, цена выбора, борьба света и тьмы внутри каждого. В работах прослеживается влияние классической литературы, мифологии и современной фантастики.</p>
+                </div>
+            </div>
+
+            <div class="studio-info">
+                <div class="studio-header">
+                    <div class="studio-logo">
+                        <div class="avatar">SS</div>
+                    </div>
+                    <div class="studio-details">
+                        <h3>Shadow Studios</h3>
+                        <p class="studio-subtitle">Творческое объединение</p>
+                    </div>
+                </div>
+                <div class="studio-description">
+                    <p>Творческое объединение, специализирующееся на создании сложных, многослойных вселенных с глубокой мифологией. Основано в 2024 году группой энтузиастов, увлеченных фантастикой и мистикой.</p>
+                    <p>«Хроники Теней» — дебютный проект, обещающий читателям погружение в мир, где граница между реальностью и потусторонним стирается.</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3>Обратная связь</h3>
+                <p>По всем вопросам: <a href="mailto:shadow.studios@mail.ru">shadow.studios@mail.ru</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Shadow Studios Wiki</h3>
+                <p>Энциклопедия по вселенной «Хроники Теней»</p>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 Shadow Studios. Все права защищены.</p>
+                <p>Материалы сайта являются авторскими.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

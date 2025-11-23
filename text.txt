@@ -1,0 +1,29 @@
+shadow-studios-wiki/
+│
+├── index.html
+├── characters.html
+├── gallery.html
+├── style.css
+├── js/
+│   ├── main.js
+│   ├── characters.js
+│   └── gallery.js
+├── images/
+│   ├── shadow.jpg
+│   ├── eligos.jpg
+│   ├── roma.jpg
+│   ├── keepers.jpg
+│   ├── collector.jpg
+│   ├── moth.jpg
+│   ├── art1.jpg
+│   ├── art2.jpg
+│   ├── art3.jpg
+│   ├── art4.jpg
+│   ├── art5.jpg
+│   ├── art6.jpg
+│   ├── art7.jpg
+│   └── art8.jpg
+└── files/
+    ├── chapter1.pdf
+    ├── chapter2.pdf
+    └── chapter3.pdf
