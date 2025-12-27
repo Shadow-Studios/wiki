@@ -1,0 +1,1295 @@
+/* Reset и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Навигация */
+.navbar {
+    background: linear-gradient(135deg, #000 0%, #2a0000 100%);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo h1 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #fff;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ff0000;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff0000;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Главная страница - Hero секция */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(45deg, #000 0%, #1a0000 50%, #000 100%);
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.shadow-text {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(255, 0, 0, 0.7),
+                 0 0 20px rgba(255, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 3px 3px 6px rgba(255, 0, 0, 0.7),
+                     0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    to {
+        text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.9),
+                     0 0 30px rgba(255, 0, 0, 0.7),
+                     0 0 40px rgba(255, 0, 0, 0.5);
+    }
+}
+
+.hero-description {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.explore-btn {
+    background: linear-gradient(45deg, #ff0000, #8b0000);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.explore-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    background: linear-gradient(45deg, #ff3333, #a00000);
+}
+
+/* Теневые волны */
+.shadow-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        transparent 0%,
+        rgba(139, 0, 0, 0.1) 20%,
+        rgba(255, 0, 0, 0.2) 40%,
+        rgba(139, 0, 0, 0.3) 60%,
+        rgba(0, 0, 0, 0.8) 100%);
+    animation: waveMove 6s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Секции */
+section {
+    padding: 5rem 2rem;
+}
+
+.section-title {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+}
+
+/* Книги */
+.books-section {
+    background: linear-gradient(180deg, #000 0%, #1a0000 100%);
+}
+
+.books-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.book-card {
+    background: linear-gradient(135deg, #1a0000 0%, #2a0000 100%);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.book-card:hover::before {
+    left: 100%;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+    border-color: #ff0000;
+}
+
+.book-title {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.file-container {
+    margin: 1.5rem 0;
+}
+
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff0000, #8b0000);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Arial Black', Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+.placeholder-file {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.book-description {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.placeholder-card {
+    opacity: 0.7;
+}
+
+.placeholder-card:hover {
+    opacity: 1;
+}
+
+/* Информация */
+.info-section {
+    background: linear-gradient(180deg, #1a0000 0%, #000 100%);
+}
+
+.author-info,
+.studio-info {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    background: linear-gradient(135deg, #1a0000 0%, #2a0000 100%);
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid #333;
+}
+
+.author-header,
+.studio-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-container,
+.studio-logo {
+    margin-right: 1.5rem;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #ff0000, #8b0000);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.author-details h3,
+.studio-details h3 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.author-subtitle,
+.studio-subtitle {
+    color: #ff0000;
+    font-style: italic;
+}
+
+.author-bio p,
+.studio-description p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.contact-info {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info h3 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.contact-info a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Персонажи */
+.characters-main {
+    padding-top: 100px;
+}
+
+.characters-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.character-card {
+    background: linear-gradient(135deg, #1a0000 0%, #2a0000 100%);
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.character-card:hover::before {
+    opacity: 1;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+    border-color: #ff0000;
+}
+
+.character-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover .character-image img {
+    transform: scale(1.05);
+}
+
+.character-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.character-name {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.character-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-details h4 {
+    color: #ff0000;
+    margin: 1rem 0 0.5rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.character-details p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Галерея */
+.gallery-main {
+    padding-top: 100px;
+}
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    background: linear-gradient(135deg, #1a0000 0%, #2a0000 100%);
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+    border-color: #ff0000;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    padding: 1rem;
+}
+
+.gallery-caption h3 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.gallery-caption p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Футер */
+footer {
+    background: linear-gradient(135deg, #000 0%, #1a0000 100%);
+    border-top: 1px solid #333;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.footer-logo h3 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.footer-copyright {
+    text-align: right;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Стили для поиска */
+.character-search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 3rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1.5rem 1rem 3rem;
+    background: linear-gradient(135deg, #1a0000 0%, #2a0000 100%);
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff0000;
+    pointer-events: none;
+}
+
+/* Краткое описание в карточках - альтернатива без -webkit-box */
+.character-brief {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-height: 4.8em; /* 3 строки * 1.6 line-height */
+    overflow: hidden;
+    position: relative;
+}
+
+.character-brief::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1.6em;
+    background: linear-gradient(to right, transparent, #1a0000 50%);
+}
+
+/* Кнопка "Читать далее" */
+.read-more-btn {
+    background: linear-gradient(45deg, #ff0000, #8b0000);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-family: 'Arial Black', Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.read-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    background: linear-gradient(45deg, #ff3333, #a00000);
+}
+
+/* Сообщение "не найдено" */
+.no-results-message {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #1a0000 0%, #2a0000 100%);
+    border-radius: 10px;
+    border: 1px solid #333;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.no-results-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.no-results-message h3 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.no-results-message p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #000 0%, #1a0000 100%);
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(-20px) scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 50px rgba(255, 0, 0, 0.3);
+}
+
+.character-modal {
+    width: 100%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #333;
+    background: linear-gradient(90deg, #1a0000 0%, #000 100%);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.modal-title {
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    line-height: 1;
+    padding: 0;
+}
+
+.modal-close:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .modal-body {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.modal-image {
+    flex: 0 0 300px;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .modal-image {
+        margin-bottom: 0;
+    }
+}
+
+.modal-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.modal-details {
+    flex: 1;
+}
+
+.modal-details h3 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #ff0000;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.4rem;
+}
+
+.modal-details h3:first-child {
+    margin-top: 0;
+}
+
+.modal-details p {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.modal-details ul {
+    color: #ccc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-details li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .shadow-text {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .author-header,
+    .studio-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .avatar-container,
+    .studio-logo {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    /* Адаптивность для модального окна */
+    .modal-body {
+        flex-direction: column;
+    }
+    
+    .modal-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .modal-image img {
+        height: 250px;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    /* Для краткого описания на мобильных */
+    .character-brief {
+        max-height: 3.2em; /* 2 строки на мобильных */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .shadow-text {
+        font-size: 2rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .characters-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .character-card {
+        min-height: 400px;
+    }
+    
+    .character-brief {
+        font-size: 0.95rem;
+    }
+}
+
+/* Стили для отображения и скрытия */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/* Анимации для плавного появления */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Оптимизация для карточек персонажей */
+.character-card .character-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.character-card .character-details > *:last-child {
+    margin-top: auto;
+}
+
+/* Улучшенный градиент для обрезки текста */
+.character-brief {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.character-brief.truncated {
+    max-height: 4.8em; /* 3 строки * 1.6 line-height */
+}
+
+.character-brief.truncated::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1.6em;
+    background: linear-gradient(to bottom, transparent, #2a0000 70%);
+    pointer-events: none;
+}
+
+/* Стили для отладки */
+.debug-border {
+    border: 2px solid red !important;
+}
+
+.read-more-btn {
+    cursor: pointer;
+    position: relative;
+}
+
+.read-more-btn:active {
+    transform: translateY(1px) !important;
+}
+
+/* Убедитесь, что кнопки кликабельны */
+.read-more-btn * {
+    pointer-events: none;
+}
+
+/* =========================================== */
+/* НОВОГОДНИЙ СТИЛЬ ДЛЯ SHADOW STUDIOS WIKI   */
+/* =========================================== */
+
+/* 1. Анимация падающего снега */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+        radial-gradient(3px 3px at 60px 20px, rgba(255, 255, 255, 0.7) 50%, transparent 50%),
+        radial-gradient(2px 2px at 80px 50px, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+        radial-gradient(3px 3px at 100px 80px, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+        radial-gradient(2px 2px at 120px 30px, rgba(255, 255, 255, 0.7) 50%, transparent 50%);
+    background-repeat: repeat;
+    background-size: 150px 150px;
+    z-index: 9999;
+    animation: snowFall 15s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes snowFall {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* 2. Новогодние огоньки в навигации */
+.navbar {
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #ff0000 10%,
+        #ff6b6b 20%,
+        #4CAF50 30%,
+        #2196F3 40%,
+        #9C27B0 50%,
+        #FF9800 60%,
+        #00BCD4 70%,
+        #E91E63 80%,
+        #ff0000 90%,
+        transparent 100%
+    );
+    animation: christmasLights 3s linear infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes christmasLights {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: 200px 0;
+    }
+}
+
+/* 3. Праздничный логотип */
+.logo h1 {
+    position: relative;
+    display: inline-block;
+}
+
+.logo h1::after {
+    content: "🎄";
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    animation: treeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes treeGlow {
+    0% {
+        filter: drop-shadow(0 0 5px #ff0000);
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+        filter: drop-shadow(0 0 15px #4CAF50);
+        transform: translateY(-50%) rotate(10deg);
+    }
+}
+
+/* 4. Новогодние карточки */
+.book-card, .character-card, .gallery-item {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(#1a0000, #1a0000) padding-box,
+                linear-gradient(45deg, #ff0000, #4CAF50, #2196F3, #ff0000) border-box;
+    background-size: 300% 300%;
+    animation: borderGradient 3s ease infinite;
+}
+
+@keyframes borderGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* 5. Специальный новогодний баннер */
+.hero::before {
+    content: "С НОВЫМ ГОДОМ! 🎅";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: transparent;
+    background: linear-gradient(45deg, #ff0000, #FFD700, #4CAF50, #2196F3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    animation: holidayText 3s ease-in-out infinite;
+    z-index: 3;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@keyframes holidayText {
+    0%, 100% {
+        opacity: 0.7;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.05);
+    }
+}
+
+/* 6. Новогодние кнопки */
+.explore-btn, .download-btn, .read-more-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-btn::before, .download-btn::before, .read-more-btn::before {
+    content: "✨";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(20px, 20px);
+    }
+}
+
+/* 7. Футер с новогодним сообщением */
+.footer-content::before {
+    content: "Пусть новый год принесёт новые истории и приключения! 🎁";
+    display: block;
+    text-align: center;
+    color: #FFD700;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    animation: goldGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.4);
+    }
+}
+
+/* 8. Модальные окна с новогодним стилем */
+.modal-header {
+    background: linear-gradient(90deg, #1a0000 0%, #0a2a00 50%, #1a0000 100%);
+    position: relative;
+}
+
+.modal-header::before {
+    content: "❄️";
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    animation: snowflakeSpin 4s linear infinite;
+}
+
+@keyframes snowflakeSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 9. Новогодний поиск */
+.search-input {
+    background: linear-gradient(135deg, #1a0000 0%, #0a1a00 100%);
+    border: 1px solid #4CAF50;
+}
+
+.search-icon {
+    color: #4CAF50;
+}
+
+/* 10. Сезонный цвет активных ссылок */
+.nav-link.active {
+    color: #4CAF50 !important;
+}
+
+.nav-link.active::after {
+    background: #4CAF50;
+}
+
+/* 11. Новогодние иконки в галерее */
+.gallery-caption h3::before {
+    content: "🎁 ";
+    font-size: 1.1rem;
+}
+
+/* 12. Адаптивность для новогоднего стиля */
+@media (max-width: 768px) {
+    .hero::before {
+        font-size: 1.8rem;
+        top: 15%;
+        white-space: normal;
+        width: 90%;
+    }
+    
+    .logo h1::after {
+        right: -30px;
+        font-size: 1.2rem;
+    }
+    
+    .footer-content::before {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero::before {
+        font-size: 1.5rem;
+        top: 10%;
+    }
+    
+    .logo h1::after {
+        right: -25px;
+        font-size: 1rem;
+    }
+}
+
+/* 13. Эффект мерцания звезд (дополнительный) */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Применяем мерцание к некоторым элементам */
+.book-card:hover .book-title,
+.character-card:hover .character-name,
+.gallery-item:hover .gallery-caption h3 {
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+/* 14. Снежинки на карточках при наведении */
+.book-card:hover::after,
+.character-card:hover::after,
+.gallery-item:hover::after {
+    content: "❄️";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    animation: snowflakeFall 1s linear;
+}
+
+@keyframes snowflakeFall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) rotate(180deg);
+        opacity: 0;
+    }
+}
