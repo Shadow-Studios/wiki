@@ -752,7 +752,7 @@ footer {
 
 .modal-image img {
     width: 100%;
-    height: 300px;
+    height: 500px;
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid #333;
@@ -969,3 +969,4 @@ footer {
 .read-more-btn * {
     pointer-events: none;
 }
+
