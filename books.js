@@ -22,7 +22,7 @@ const chapterDescriptions = [
   'Собиратель оказывается сильнее; Мотылёк жертвует собой, взрывая корабль, Рома добивает Когтя и остаётся с друзьями на крыше дома.'
 ];
 
-const links = chapterTitles.map((_, i) => `/files/chapter-${String(i + 1).padStart(2, '0')}.pdf`);
+const links = chapterTitles.map((_, i) => `/wiki/files/chapter-${String(i + 1).padStart(2, '0')}.pdf`);
 
 const grid = document.getElementById('booksGrid');
 
