@@ -38,6 +38,16 @@ const CHAPTERS = [
     title: 'Седьмая глава',
     description: '???',
     file: 'chapter-07.pdf'
+  },
+  {
+    title: 'Восьмая глава',
+    description: '???',
+    file: 'chapter-08.pdf'
+  },
+  {
+    title: 'Девятая глава',
+    description: '???',
+    file: 'chapter-09.pdf'
   }
 ];
 
